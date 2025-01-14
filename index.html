@@ -62,8 +62,8 @@
 
             // 3. Get the temperature input value and weather condition value
             // TODO: Use document.getElementById to get the value of temperature input and weather condition dropdown
-            
-            const temperature = 0;  // TODO: Replace with code to get the temperature value and convert it to a number
+            const temperature = Number(document.getElementById("temperature").value);  // TODO: Replace with code to get the temperature value and convert it to a number
+            //const temperature = 0;  // TODO: Replace with code to get the temperature value and convert it to a number
             const weatherCondition = "";  // TODO: Replace with code to get the weather condition value
 
             // 4. Initialize a variable to store the recommendation
@@ -71,6 +71,15 @@
 
             // 5. Write conditionals to check the temperature and weather condition
             // TODO: Write conditionals here to set different recommendation based on weather and temperature
+            if (temperature > 30 && weatherCondition === "sunny") {
+                recommendation = "It's too hot outside. Stay hydrated!";
+            } else if (temperature < 10 && weatherCondition === "rainy") {
+                recommendation = "It's cold and rainy. Bring an umbrella!";
+            } else if (temperature < 0 && weatherCondition === "snowy") {
+                recommendation = "It's freezing! Wear a thick coat and hat!";
+            } else {
+                recommendation = "The weather is fine. Enjoy your day!";
+            }
 
             // 6. Display the recommendation in the div and show it
             recommendationDiv.textContent = recommendation;  // TODO: Set the recommendation text in the div
